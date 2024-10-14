@@ -1,0 +1,30 @@
+
+version: "1.0"
+
+services:
+  
+  python-dev:
+    container_name: flask-server 
+    build: 
+      context: ./app 
+      dockerfile: Dockerfile 
+    volumes: 
+      - ./app:/var/app/flask_app 
+    ports:
+      - "8000:8000"
+  
+
+  mysql-dev:
+   image: mysql:5.7.22
+   container_name: flask-db 
+   ports: 
+    - 6603:3306 
+   environment: 
+    MYSQL_ROOT_PASSWORD: "root" 
+   volumes: 
+    - database-folder:/var/lib/mysql
+
+  
+volumes:
+  database-folder:
+
