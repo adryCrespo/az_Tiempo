@@ -1,8 +1,9 @@
-Flask
+Flask==2.2.5
+Flask-SQLAlchemy==3.0.4
+Gunicorn==20.1.0
+# mysql-connector-python==8.0.32
 Flask-Migrate
-Flask-Script
-mysql-connector-python
-Flask-SQLAlchemy
-gunicorn
+SQLAlchemy
 psycopg2-binary
-marshmallow
+# pytest==7.2.2
+# flask-mysqldb

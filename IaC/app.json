@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "containerGroupName": {
+        "type": "string",
+        "defaultValue": "az_tiempo_c_grupo"
+
+   
+        }
+    },
+    "functions": [],
+    "variables": {
+        "container1name": "flashapp",
+        "container1image": "registroimagenes.azurecr.io/az_tiempo/az_tiempo-python-dev:latest"
+    },
+    "resources": [
+        {
+            "name": "[parameters('containerGroupName')]",
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2023-05-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "containers": [
+                    {
+                        "name": "[variables('container1name')]",
+                        "properties": {
+                            "image": "[variables('container1image')]",
+                            "ports": [
+                                {
+                                    "port": 8000
+                                }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "cpu": 1,
+                                    "memoryInGB": 4
+                                }
+                            }
+                        }
+                    }
+                ],
+                "osType": "Linux",
+                "ipAddress": {
+                    "type": "Public",
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 8000
+                        }
+                    ]
+                },
+                "imageRegistryCredentials": [
+            {
+                "server": "imageRegistryLoginServer",
+                "username": "registroImagenes",
+                "password": "Bgkfa5TkTu4wUHZKh3MO+toLorJpXYm5n/KDs3H/jb+ACRDOonDG"
+                }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}

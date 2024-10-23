@@ -3,7 +3,7 @@ version: "1.0"
 
 services:
   
-  python-dev:
+  flask-server:
     container_name: flask-server 
     build: 
       context: ./app 
@@ -14,17 +14,31 @@ services:
       - "8000:8000"
   
 
-  mysql-dev:
-   image: mysql:5.7.22
-   container_name: flask-db 
-   ports: 
-    - 6603:3306 
-   environment: 
-    MYSQL_ROOT_PASSWORD: "root" 
-   volumes: 
-    - database-folder:/var/lib/mysql
+  # mysql-dev:
+  #  image: mysql:5.7.22
+  #  container_name: flask-db 
+  #  ports: 
+  #   - 3307:3306
+  #  environment: 
+  #   MYSQL_ROOT_PASSWORD: "root" 
+  #  volumes: 
+  #   - database-folder:/var/lib/mysql
+  flask-db :
+    restart: always
+    image: postgres:12.10
+    container_name: flask-db 
 
-  
+    ports:
+      - "5432:5432"
+
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=users
+
+    volumes: 
+      - database-folder:/var/lib/postgresql
+
 volumes:
   database-folder:
 
