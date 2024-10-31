@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "uksouth"
+        },
+        "cr_name": {
+            "type": "string",
+            "defaultValue": "azTiempoCr"
+        }
+    },
+
+    "resources": [
+     {
+        "name": "[parameters('cr_name')]",
+        "type": "Microsoft.ContainerRegistry/registries",
+        "apiVersion": "2023-07-01",
+        "location": "[resourceGroup().location]",
+        "sku": {
+            "name": "Classic"
+        },
+        "properties": {
+            "adminUserEnabled": true
+        }
+     }
+    ]
+
+}

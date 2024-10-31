@@ -16,3 +16,6 @@ servicios:
 -   **mysql-dev**: base de datos.  
     el user de la base de datos es el superusuario por defecto root
 -  **python-dev**: aplicacion de Flask
+
+
+

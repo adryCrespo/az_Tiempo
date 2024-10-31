@@ -1,0 +1,35 @@
+name: resourcegroup_deployment
+on: 
+    push
+env:
+   ARM_TEMPLATE: infra/container_registry.json
+   name: lol
+   SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
+   location: uksouth
+   resource-group: az_tiempo 
+
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    
+        - name: azure login
+          uses: azure/login@v2
+          with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+        - name: azure set subscription
+          run: |
+            az account set --subscription ${{secrets.SUBSCRIPTION_NAME}}
+    
+        - name: azure rs creation
+          run: |
+            az group create --name ${{env.resource-group}} --location ${{env.location}}
+        - name: deployment
+          run: |
+            az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE}}
+
+
