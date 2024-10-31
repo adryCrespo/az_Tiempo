@@ -34,10 +34,10 @@ runs:
         
         - name: azure rs creation
           run: |
-            az group create --name ${{inputs.resource-group}} --location ${{inputs.location}}
+            az group create --name ${{inputs.resource_group}} --location ${{inputs.location}}
           shell: bash
         
         - name: deployment
           run: |
-            az deployment group  create  --resource-group ${{inputs.resource-group}}  --template-file ${{inputs.ARM_TEMPLATE}}
+            az deployment group  create  --resource-group ${{inputs.resource_group}}  --template-file ${{inputs.ARM_TEMPLATE}}
           shell: bash
