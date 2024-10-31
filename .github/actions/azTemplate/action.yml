@@ -20,15 +20,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-          shell: bash
+
     
         - name: azure login
           uses: azure/login@v2
           with:
            creds: ${{ inputs.AZURE_CREDENTIALS }}
-          shell: bash
         
         - name: azure set subscription
           run: |
