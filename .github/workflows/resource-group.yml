@@ -38,7 +38,7 @@ jobs:
     
         steps:
           - name: nuevo deploy
-            uses: ./github/actions/azTemplate
+            uses: ./.github/actions/azTemplate
             with:
               AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
               SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}

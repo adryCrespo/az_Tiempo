@@ -2,28 +2,23 @@ name: 'azTemplateDeployment'
 description: 'depligue de arm template en azure en un resource group'
 inputs:
   AZURE_CREDENTIALS:
+    description: "service principal, contiene clientID, tenantID, password"
     required: true
-
   SUBSCRIPTION_NAME:
+    description: "nombre subscription en azure"
     required: true
-
   location:
+    description: "region del resource group"
     required: true
-
   resource_group:
+    description: "nombre del resource group donde se despliegan los servicios"
     required: true
-
   ARM_TEMPLATE:
+    description: "arm template json"
     required: true
-
-outputs:
-  my_output:
-    description: 'deployment succeed'
-
 
 runs:
   using: "composite"
-  shell: ubuntu-latest
   steps:
         - name: Checkout code
           uses: actions/checkout@v4
