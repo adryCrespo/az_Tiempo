@@ -2,7 +2,7 @@ name: resourcegroup_deployment
 on: 
     push
 env:
-   ARM_TEMPLATE: infra/container_registry.json
+   ARM_TEMPLATE: IaC/container_registry.json
    name: lol
    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
    location: uksouth
