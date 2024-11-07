@@ -6,7 +6,7 @@
             "type": "string",
             "defaultValue": "uksouth"
         },
-        "cr_name": {
+        "imageRegistryUsername": {
             "type": "string",
             "defaultValue": "azTiempoCr"
         }
@@ -14,7 +14,7 @@
 
     "resources": [
      {
-        "name": "[parameters('cr_name')]",
+        "name": "[parameters('imageRegistryUsername')]",
         "type": "Microsoft.ContainerRegistry/registries",
         "apiVersion": "2023-07-01",
         "location": "[resourceGroup().location]",
