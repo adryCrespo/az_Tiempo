@@ -45,9 +45,9 @@
     },
     "variables": {
       "container1name_db": "flask-db ",
-      "container1image_db": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container1image'),':latest')]",
+      "container1image_db": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container1name_db'),':latest')]",
       "container2name_server": "flask-server",
-      "container2image_server": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container2image'),':latest')]"
+      "container2image_server": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container2name_server'),':latest')]"
 
     },
     "resources": [
