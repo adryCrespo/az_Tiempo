@@ -12,7 +12,7 @@
 
         "containerGroupName": {
             "type": "string",
-            "value": "az_tiempo"},
+            "value": "az-tiempo"},
 
          "port_db": {
             "type": "int",
