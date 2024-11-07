@@ -10,10 +10,6 @@
             "type": "string",
             "value": "azTiempoCr.azurecr.io"},
 
-        "location": {
-            "type": "string",
-            "value": "uksouth"  },
-
         "containerGroupName": {
             "type": "string",
             "value": "az_tiempo"},

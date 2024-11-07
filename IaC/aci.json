@@ -39,7 +39,7 @@
       "port_server": {
         "type": "int",
         "metadata": {
-          "description": "puerto de la base de datos"
+          "description": "puerto del server"
         }
       }
     },
