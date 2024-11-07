@@ -3,17 +3,30 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
        "imageRegistryUsername": {
-         "type": "string",
-         "value": "azTiempoCr" 
-       } ,
+            "type": "string",
+            "value": "azTiempoCr" } ,
+
+        "imageRegistryLoginServer": {
+            "type": "string",
+            "value": "azTiempoCr.azurecr.io"},
+
         "location": {
-            
-         "type": "string",
-            "value": "uksouth"
-        },
+            "type": "string",
+            "value": "uksouth"  },
+
         "containerGroupName": {
-        "type": "string",
-        "value": "az_tiempo"}
+            "type": "string",
+            "value": "az_tiempo"},
+
+         "port_db": {
+            "type": "int",
+            "value": 5432},
+
+         "port_server": {
+            "type": "int",
+            "value": 8000}
+
+        }
+
         
    }
-}

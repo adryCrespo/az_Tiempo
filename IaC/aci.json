@@ -29,13 +29,25 @@
         "metadata": {
             "description": "description"
         }
+      },
+      "port_db": {
+        "type": "int",
+        "metadata": {
+          "description": "puerto de la base de datos"
+        }
+      },
+      "port_server": {
+        "type": "int",
+        "metadata": {
+          "description": "puerto de la base de datos"
+        }
       }
     },
     "variables": {
-      "container1name": "webcontainer",
-      "container1image": "registroimagenes.azurecr.io/prueba2webs/web_container:latest",
-      "container2name": "webcontainer2",
-      "container2image": "registroimagenes.azurecr.io/prueba2webs/web_container2:latest"
+      "container1name_db": "flask-db ",
+      "container1image_db": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container1image'),':latest')]",
+      "container2name_server": "flask-server",
+      "container2image_server": "[concat(parameters('imageRegistryLoginServer'),'/',parameters('containerGroupName'),'/',variables('container2image'),':latest')]"
 
     },
     "resources": [
@@ -47,9 +59,9 @@
         "properties": {
           "containers": [
             {
-              "name": "[variables('container1name')]",
+              "name": "[variables('container1name_db')]",
               "properties": {
-                "image": "[variables('container1image')]",
+                "image": "[variables('container1image_db')]",
                 "resources": {
                   "requests": {
                     "cpu": 1,
@@ -58,16 +70,16 @@
                 },
                 "ports": [
                   {
-                    "port": 3210
+                    "port": "[parameters('port_db')]"
                   }
                   
                 ]
               }
             },
                       {
-              "name": "[variables('container2name')]",
+              "name": "[variables('container2name_server')]",
               "properties": {
-                "image": "[variables('container2image')]",
+                "image": "[variables('container2image_server')]",
                 "resources": {
                   "requests": {
                     "cpu": 1,
@@ -76,7 +88,7 @@
                 },
                 "ports": [
                   {
-                    "port": 80
+                    "port": "[parameters('port_server')]" 
                   }
                   
                 ]
@@ -89,11 +101,11 @@
             "ports": [
               {
                 "protocol": "tcp",
-                "port": 80
+                "port": "[parameters('port_server')]" 
               },
                 {
                 "protocol": "tcp",
-                "port": 3210
+                "port": "[parameters('port_db')]"
               }
             ]
           },

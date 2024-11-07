@@ -2,12 +2,15 @@ name: resourcegroup_deployment
 on: 
     push
 env:
-   ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
-   name: lol
-   SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
-   location: uksouth
-   resource-group: az_tiempo 
-   parameter_file : IaC/param_container.json
+  SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
+  location: uksouth
+  resource-group: az_tiempo 
+  ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
+  parameter_file_container : IaC/param_container.json
+
+  ARM_TEMPLATE_ACI: IaC/aci.json
+  parameter_file_ACI : IaC/param_aci.json
+
 
 jobs:
 
@@ -18,7 +21,7 @@ jobs:
           - name: Checkout code
             uses: actions/checkout@v4
           
-          - name: nuevo deploy
+          - name: deploy_container_registry
             uses: ./.github/actions/azTemplateP
             with:
               AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
@@ -26,6 +29,14 @@ jobs:
               location: ${{env.location}}
               resource_group: ${{env.resource-group}}
               ARM_TEMPLATE: ${{env.ARM_TEMPLATE_CONTAINER}}
-              parametros_file: ${{env.parameter_file}}
+              parametros_file: ${{env.parameter_file_container}}
 
-            
+          - name: arm_template_ACI
+            uses: ./.github/actions/azTemplateP
+            with:
+                AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+                SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
+                location: ${{env.location}}
+                resource_group: ${{env.resource-group}}
+                ARM_TEMPLATE: ${{env.ARM_TEMPLATE_ACI}}
+                parametros_file: ${{env.parameter_file_ACI}}           
