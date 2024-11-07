@@ -7,7 +7,7 @@ env:
    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
    location: uksouth
    resource-group: az_tiempo 
-   parameter_file : IaC/parameter.json
+   parameter_file : IaC/param_container.json
 
 jobs:
 
