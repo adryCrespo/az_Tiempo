@@ -9,7 +9,7 @@ inputs:
     required: true
   location:
     description: "region del resource group"
-    required: false
+    required: true
   resource_group:
     description: "nombre del resource group donde se despliegan los servicios"
     required: true
