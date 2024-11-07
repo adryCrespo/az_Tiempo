@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Ciudad {{ciudad|formato_nombre_ciudad}} {% endblock %}
+{% block content %}
+
+<h1>Parte meteorologico {{ciudad|formato_nombre_ciudad}}</h1>
+hoy {{dia}}
+<br>
+
+<br>
+<img src="/plot/{{ciudad}}" alt="my plot2" width="400" height="250" >
+<!-- temperatura_minima : {{t_min}} -->
+{% endblock %}
+
+
+
+
+

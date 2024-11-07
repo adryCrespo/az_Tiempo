@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Azure Tiempo Madrid {% endblock %}
+{% block content %}
+<h1>Parte meteorologico Madrid</h1>
+<h2 >Resumen de hoy</h2><br> 
+<p>{{resumen.get_parte_diario()}}</p>
+
+
+{% for ciudad in ciudades %}
+<h2>{{ciudad|formato_nombre_ciudad}}</h2> 
+<ul> 
+    <li>Temperatura maxima: {{resumen.get_dato_ciudad_atributo(ciudad,"t_max")}}</li>
+
+    <li>Temperatura minima: {{resumen.get_dato_ciudad_atributo(ciudad,"t_min")}}</li>
+    <li>Descripcion: {{resumen.get_dato_ciudad_atributo(ciudad,"description")}}</li>
+    <a href="{{ url_for('ciudad_url',ciudad=ciudad ) }}">mas detalles </a><br>
+</ul>
+
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+

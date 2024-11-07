@@ -1,0 +1,777 @@
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00329s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:app:[('madrid', '01-11-2024', Decimal('10.00'), Decimal('11.00')), ('madrid', '02-11-2024', Decimal('11.00'), Decimal('12.00')), ('madrid', '03-11-2024', Decimal('12.00'), Decimal('13.00')), ('madrid', '05-11-2024', Decimal('11.00'), Decimal('18.00'))]
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='madrid' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00283s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO public.ciudades(ciudad,fecha, t_min, t_max) VALUES ('madrid','07-11-2024', 11, 17  );
+INFO:sqlalchemy.engine.Engine:[generated in 0.00288s] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='alcala_heranes' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00261s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO public.ciudades(ciudad,fecha, t_min, t_max) VALUES ('alcala_heranes','07-11-2024', 8, 19  );
+INFO:sqlalchemy.engine.Engine:[generated in 0.01019s] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='getafe' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00261s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO public.ciudades(ciudad,fecha, t_min, t_max) VALUES ('getafe','07-11-2024', 10, 19  );
+INFO:sqlalchemy.engine.Engine:[generated in 0.00193s] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='collado_villalba' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00170s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO public.ciudades(ciudad,fecha, t_min, t_max) VALUES ('collado_villalba','07-11-2024', 9, 17  );
+INFO:sqlalchemy.engine.Engine:[generated in 0.00200s] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='navalcarnero' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00242s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO public.ciudades(ciudad,fecha, t_min, t_max) VALUES ('navalcarnero','07-11-2024', 10, 19  );
+INFO:sqlalchemy.engine.Engine:[generated in 0.00149s] {}
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00305s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00164s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='madrid' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00179s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='alcala_heranes' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00197s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='getafe' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00290s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='collado_villalba' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00120s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='navalcarnero' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00123s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00138s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.01190s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00229s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 76, in plot_png
+    fig = create_figure2(ciudad)
+  File "/var/app/flask_app/app.py", line 103, in create_figure2
+    f, ax = plt.subplots(plt.figure(figsize=(15, 15)))
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1760, in subplots
+    axs = fig.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 860, in subplots
+    gs = self.add_gridspec(nrows, ncols, figure=self, **gridspec_kw)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 1538, in add_gridspec
+    gs = GridSpec(nrows=nrows, ncols=ncols, figure=self, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 363, in __init__
+    super().__init__(nrows, ncols,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 48, in __init__
+    raise ValueError(
+ValueError: Number of rows must be a positive integer, not <Figure size 1500x1500 with 0 Axes>
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00300s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 76, in plot_png
+    fig = create_figure2(ciudad)
+  File "/var/app/flask_app/app.py", line 103, in create_figure2
+    f, ax = plt.subplots(plt.figure(figsize=(15, 15)))
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1760, in subplots
+    axs = fig.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 860, in subplots
+    gs = self.add_gridspec(nrows, ncols, figure=self, **gridspec_kw)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 1538, in add_gridspec
+    gs = GridSpec(nrows=nrows, ncols=ncols, figure=self, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 363, in __init__
+    super().__init__(nrows, ncols,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 48, in __init__
+    raise ValueError(
+ValueError: Number of rows must be a positive integer, not <Figure size 1500x1500 with 0 Axes>
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00303s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 76, in plot_png
+    fig = create_figure2(ciudad)
+  File "/var/app/flask_app/app.py", line 103, in create_figure2
+    f, ax = plt.subplots(plt.figure(figsize=(15, 15)))
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1760, in subplots
+    axs = fig.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 860, in subplots
+    gs = self.add_gridspec(nrows, ncols, figure=self, **gridspec_kw)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 1538, in add_gridspec
+    gs = GridSpec(nrows=nrows, ncols=ncols, figure=self, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 363, in __init__
+    super().__init__(nrows, ncols,
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/gridspec.py", line 48, in __init__
+    raise ValueError(
+ValueError: Number of rows must be a positive integer, not <Figure size 1500x1500 with 0 Axes>
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00194s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00378s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00309s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00407s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00318s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00314s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00342s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00130s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00269s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00144s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00124s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00346s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00110s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00157s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00178s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00268s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00394s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00332s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00340s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 78, in plot_png
+    FigureCanvas(fig).print_png(output,  bbox_inches='tight')
+TypeError: FigureCanvasAgg.print_png() got an unexpected keyword argument 'bbox_inches'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00494s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 78, in plot_png
+    FigureCanvas(fig).print_png(output,  bbox_inches='tight')
+TypeError: FigureCanvasAgg.print_png() got an unexpected keyword argument 'bbox_inches'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='madrid' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00121s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='alcala_heranes' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00147s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='getafe' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00268s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='collado_villalba' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00125s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='navalcarnero' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00105s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00348s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 78, in plot_png
+    FigureCanvas(fig).print_png(output,  bbox_inches='tight')
+TypeError: FigureCanvasAgg.print_png() got an unexpected keyword argument 'bbox_inches'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00186s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 79, in plot_png
+    plt.savefig(fig, format='png',bbox_inches='tight')
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1228, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 3395, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2204, in print_figure
+    result = print_method(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2054, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 496, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 445, in _print_pil
+    mpl.image.imsave(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/image.py", line 1676, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/PIL/Image.py", line 2605, in save
+    save_handler(self, fp, filename)
+  File "/usr/local/lib/python3.10/site-packages/PIL/PngImagePlugin.py", line 1371, in _save
+    fp.write(_MAGIC)
+AttributeError: 'Figure' object has no attribute 'write'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='madrid' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00314s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='alcala_heranes' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00321s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='getafe' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00398s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='collado_villalba' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00332s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select count(*) from public.ciudades where ciudad='navalcarnero' and fecha='07-11-2024'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00664s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.02896s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+ERROR:app:Exception on /plot/madrid [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/app/flask_app/app.py", line 79, in plot_png
+    plt.savefig(fig, format='png',bbox_inches='tight')
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1228, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/figure.py", line 3395, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2204, in print_figure
+    result = print_method(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2054, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 496, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 445, in _print_pil
+    mpl.image.imsave(
+  File "/usr/local/lib/python3.10/site-packages/matplotlib/image.py", line 1676, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/PIL/Image.py", line 2605, in save
+    save_handler(self, fp, filename)
+  File "/usr/local/lib/python3.10/site-packages/PIL/PngImagePlugin.py", line 1371, in _save
+    fp.write(_MAGIC)
+AttributeError: 'Figure' object has no attribute 'write'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00155s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00308s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00159s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] {}
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:select * from public.ciudades where ciudad='madrid'
+INFO:sqlalchemy.engine.Engine:[generated in 0.00245s] {}
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
