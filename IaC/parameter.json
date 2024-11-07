@@ -11,13 +11,9 @@
          "type": "string",
             "value": "uksouth"
         },
-
         "containerGroupName": {
         "type": "string",
-        "value": "az_tiempo"
-      }
-
-
+        "value": "az_tiempo"}
         
    }
 }

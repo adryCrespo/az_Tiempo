@@ -43,5 +43,5 @@ runs:
         
         - name: deployment
           run: |
-            az deployment group  create  --resource-group ${{inputs.resource_group}}  --template-file ${{inputs.ARM_TEMPLATE}} --parameters {{inputs.parametros_file}}
+            az deployment group  create  --resource-group ${{inputs.resource_group}}  --template-file ${{inputs.ARM_TEMPLATE}} --parameters ${{inputs.parametros_file}}
           shell: bash
