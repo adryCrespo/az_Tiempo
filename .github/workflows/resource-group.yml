@@ -10,6 +10,8 @@ env:
 
   ARM_TEMPLATE_ACI: IaC/aci.json
   parameter_file_ACI : IaC/param_aci.json
+  container_registry : azTiempoCr
+  cr_server : azTiempoCr.azurecr.io/az-tiempo
 
 
 jobs:
@@ -31,14 +33,25 @@ jobs:
               ARM_TEMPLATE: ${{env.ARM_TEMPLATE_CONTAINER}}
               parametros_file: ${{env.parameter_file_container}}
           
-          - name : pss cri
+
+          - name : push images to acr
+            run: |
+              az acr login --name ${{env.container_registry}} 
+              docker tag flask-db ${{env.cr_server}}/flask-db
+              docker tag flask-server ${{env.cr_server}}/flask-server
+              docker push ${{env.cr_server}}/flask-db
+              docker push ${{env.cr_server}}/flask-server
+          
+          - name : pss acr
             run: |
              echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
 
-          - name: deploy aci
-            run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=$container_registry_pass
-            #  echo "action_state=yellow" >> "$GITHUB_ENV"
+          # - name: deploy aci
+          #   run: |
+          #     az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=$container_registry_pass
+
+
+              #  echo "action_state=yellow" >> "$GITHUB_ENV"
 
           # - name : pss cri2
           #   run: |
