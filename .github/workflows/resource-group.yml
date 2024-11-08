@@ -37,7 +37,7 @@ jobs:
 
           - name: deploy aci
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} -- parameters '{"imageRegistryPassword":{"value": "$container_registry_pass"}}'
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=$container_registry_pass
             #  echo "action_state=yellow" >> "$GITHUB_ENV"
 
           # - name : pss cri2
