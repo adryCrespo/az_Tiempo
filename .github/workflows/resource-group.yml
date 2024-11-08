@@ -33,9 +33,9 @@ jobs:
           
           - name : pss cri
             run: |
-             echo "cri_pass=az acr credential show --name azTiempoCr --query 'passwords[0].value'" >> "$GITHUB_ENV"
+             echo "cri_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
             #  echo "action_state=yellow" >> "$GITHUB_ENV"
-            
+
           - name : pss cri2
             run: |
              echo "aaa   $cri_pass"
