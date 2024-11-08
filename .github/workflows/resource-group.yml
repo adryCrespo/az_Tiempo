@@ -33,12 +33,13 @@ jobs:
           
           - name : pss cri
             run: |
-             echo "cri_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
+             echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
+             az deployment group  create  --resource-group ${{env.resource_group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} -- parameters '{"imageRegistryPassword":{"value": "$container_registry_pass"}}'
             #  echo "action_state=yellow" >> "$GITHUB_ENV"
 
-          - name : pss cri2
-            run: |
-             echo "aaa   $cri_pass"
+          # - name : pss cri2
+          #   run: |
+          #    echo "aaa   $cri_pass"
 
           # - name: arm_template_ACI
           #   uses: ./.github/actions/azTemplateP
