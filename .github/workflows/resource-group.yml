@@ -39,9 +39,8 @@ jobs:
               # ACR_REGISTRY_ID: /subscriptions/946ef4a8-c168-4a2a-9c7a-75a36d891088/resourceGroups/az_tiempo/providers/Microsoft.ContainerRegistry/registries/azTiempoCr
               
             run: |
-              # az role assignment create --assignee ${{env.SERVICE_PRINCIPAL_ID}} --scope $ACR_REGISTRY_ID --role acrpush
-              # az acr login --name ${{env.container_registry}} 
-              docker login myregistry.azurecr.io --username ${{SERVICE_PRINCIPAL_ID}} --password ${{secrets.SP_PASSWD}}
+
+              docker login myregistry.azurecr.io --username ${{secrets.SERVICE_PRINCIPAL_ID}} --password ${{secrets.SP_PASSWD}}
               docker tag az_tiempo-flask-db ${{env.cr_server}}/flask-db
               docker tag az_tiempo-flask-server ${{env.cr_server}}/flask-server
               docker push ${{env.cr_server}}/flask-db
