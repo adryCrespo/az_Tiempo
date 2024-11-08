@@ -30,13 +30,22 @@ jobs:
               resource_group: ${{env.resource-group}}
               ARM_TEMPLATE: ${{env.ARM_TEMPLATE_CONTAINER}}
               parametros_file: ${{env.parameter_file_container}}
+          
+          - name : pss cri
+            run: |
+             echo "cri_pass=az acr credential show --name azTiempoCr --query 'passwords[0].value'" >> "$GITHUB_ENV"
+            #  echo "action_state=yellow" >> "$GITHUB_ENV"
+            
+          - name : pss cri2
+            run: |
+             echo "aaa   $cri_pass"
 
-          - name: arm_template_ACI
-            uses: ./.github/actions/azTemplateP
-            with:
-                AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
-                SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
-                location: ${{env.location}}
-                resource_group: ${{env.resource-group}}
-                ARM_TEMPLATE: ${{env.ARM_TEMPLATE_ACI}}
-                parametros_file: ${{env.parameter_file_ACI}}           
+          # - name: arm_template_ACI
+          #   uses: ./.github/actions/azTemplateP
+          #   with:
+          #       AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+          #       SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
+          #       location: ${{env.location}}
+          #       resource_group: ${{env.resource-group}}
+          #       ARM_TEMPLATE: ${{env.ARM_TEMPLATE_ACI}}
+          #       parametros_file: ${{env.parameter_file_ACI}}           
