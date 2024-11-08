@@ -37,8 +37,8 @@ jobs:
           - name : push images to acr
             run: |
               az acr login --name ${{env.container_registry}} 
-              docker tag flask-db ${{env.cr_server}}/flask-db
-              docker tag flask-server ${{env.cr_server}}/flask-server
+              docker tag az_tiempo-flask-db ${{env.cr_server}}/flask-db
+              docker tag az_tiempo-flask-server ${{env.cr_server}}/flask-server
               docker push ${{env.cr_server}}/flask-db
               docker push ${{env.cr_server}}/flask-server
           
