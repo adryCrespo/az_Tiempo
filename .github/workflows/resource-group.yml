@@ -34,6 +34,7 @@ jobs:
               parametros_file: ${{env.parameter_file_container}}
           
 
+
           - name : push images to acr
             run: |
               az acr login --name ${{env.container_registry}} 
@@ -42,9 +43,11 @@ jobs:
               docker push ${{env.cr_server}}/flask-db
               docker push ${{env.cr_server}}/flask-server
           
-          - name : pss acr
-            run: |
-             echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
+          # - name : pss acr
+          #   run: |
+          #    echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
+
+
 
           # - name: deploy aci
           #   run: |
