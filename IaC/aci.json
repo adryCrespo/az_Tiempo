@@ -107,7 +107,8 @@
                 "protocol": "tcp",
                 "port": "[parameters('port_db')]"
               }
-            ]
+            ],
+            "dnsNameLabel":  "az-tiempo-project"
           },
           "imageRegistryCredentials": [
                 {

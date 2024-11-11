@@ -39,10 +39,10 @@ jobs:
             run: |
 
               docker login azTiempoCr.azurecr.io --username ${{secrets.SERVICE_PRINCIPAL_ID}} --password ${{secrets.SP_PASSWD}}
-              docker build ./database -t ${{env.cr_server}}/flask-db
-              docker build ./app -t ${{env.cr_server}}/flask-server
-              docker push ${{env.cr_server}}/flask-db
-              docker push ${{env.cr_server}}/flask-server
+              docker build ./database -t ${{env.cr_server}}/flask-db:latest
+              docker build ./app -t ${{env.cr_server}}/flask-server:latest
+              docker push ${{env.cr_server}}/flask-db:latest
+              docker push ${{env.cr_server}}/flask-server:latest
           
           - name : pss acr
             run: |
