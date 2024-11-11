@@ -79,14 +79,14 @@ def plot_png(ciudad):
     output.seek(0)
     return Response(output.getvalue(), mimetype='image/png')
 
-def create_figure(ciudad):
+def create_figure(nombre_ciudad:str):
      
      dm = DatabaseManager()
-     result = dm.query_ciudad_db(ciudad)
+     result = dm.query_ciudad_db(nombre_ciudad)
      ciudad, fecha, t_min, t_max = zip(*result)
 
      f, ax = plt.subplots(figsize=(12, 7))
-     ax.set_title(f'Evolucion Temperaturas a lo largo del tiempo en {ciudad}',fontsize=15,fontweight='bold')
+     ax.set_title(f'Evolucion Temperaturas a lo largo del tiempo en {nombre_ciudad}',fontsize=15,fontweight='bold')
 
      ax.set_xlabel('Fecha',fontsize=20, fontweight='bold')
      ax.set_ylabel('Temperatura (ºC)',fontsize=20, fontweight='bold')
