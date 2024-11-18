@@ -24,10 +24,10 @@ from matplotlib.figure import Figure
 # # Create a logger instance
 # logger = logging.getLogger(__name__)
 
-p=1
 app = Flask(__name__,template_folder="template",static_folder="static",static_url_path="/")
 
-connection_string = 'postgresql://root:root@localhost:5432/root'
+connection_string = 'postgresql://root:root@flask-db:5432/root'
+# connection_string = 'postgresql://root:root@localhost:5432/root'
 engine = create_engine(connection_string, echo=True)
 CIUDADES = ["madrid","alcala_heranes","getafe","collado_villalba","navalcarnero"]
 

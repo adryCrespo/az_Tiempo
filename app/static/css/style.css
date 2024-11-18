@@ -1,0 +1,67 @@
+
+.titulo{
+  height: 100px ;
+  width: 1270px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-left: 10px;
+      background-color: hsla(205, 100%, 50%, 0.992);  
+      text-align: center;
+      color:beige;}
+      
+#caja_resumen{
+  height: 150px ;
+  width: 960px;
+  padding-top: 30px;
+  padding-left: 20px;
+  margin-left: 150px;
+  margin-top: 10px;
+  background-color: hsla(205, 100%, 50%, 0.992);  
+  
+  color:beige;
+  
+}
+.caja_label_resumen{
+  height: 100px ;
+  width: 300px;
+
+  }
+
+.caja_value_resumen{
+  height: 150px ;
+  width: 900px;
+}
+
+#caja{ height: 150px ;
+        width: 300px;
+        padding-top: 20px;
+        padding-left: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: inline-block;
+      }
+      .c0{ background-color: black ;
+        color:white       }
+      .c10{ background-color: blue;
+          color:white }
+      .c15{ background-color: green;
+            color:white }
+      .c20{ background-color: rgb(219, 255, 15);  }
+      .c30{ background-color: rgb(232, 176, 23);  }
+      .c35{ background-color: red (255, 0, 0, 0.027); }
+            
+            
+            
+            .temp_contenedor{text-align: center;}
+            .temp{
+              border: 0px;
+              display: inline-block;
+              margin-left: 10px;
+            }
+            
+.contenedor{
+    display: flex;
+    justify-content: center;
+    }
+  
+.descripcion{ text-align: center}

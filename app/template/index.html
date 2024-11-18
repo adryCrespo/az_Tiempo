@@ -1,22 +1,99 @@
 {% extends "base.html" %}
 {% block title %} Azure Tiempo Madrid {% endblock %}
 {% block content %}
-<h1>Parte meteorologico Madrid</h1>
-<h2 >Resumen de hoy</h2><br> 
-<p>{{resumen.get_parte_diario()}}</p>
 
 
-{% for ciudad in ciudades %}
-<h2>{{ciudad|formato_nombre_ciudad}}</h2> 
-<ul> 
-    <li>Temperatura maxima: {{resumen.get_dato_ciudad_atributo(ciudad,"t_max")}}</li>
+<div id="caja_resumen" class="contenedor">
+        <div class="caja_label_resumen"> <h2> Resumen de hoy </h2> 
+        </div>
 
-    <li>Temperatura minima: {{resumen.get_dato_ciudad_atributo(ciudad,"t_min")}}</li>
-    <li>Descripcion: {{resumen.get_dato_ciudad_atributo(ciudad,"description")}}</li>
-    <a href="{{ url_for('ciudad_url',ciudad=ciudad ) }}">mas detalles </a><br>
-</ul>
+        <div class="caja_value_resumen">  <p>{{resumen.get_parte_diario()}}</p>
+        </div>
+</div>
 
-{% endfor %}
+
+<div class="contenedor">
+
+    <div id="caja" class="c0">
+      <h2 style="text-align: center; margin-bottom: 0px;" >MADRID</h2>
+        <hr />
+      <div class="temp_contenedor" >
+        <div class="temp"> Temp max 20ºC  </div>
+        <div class="temp" style="text-align: center" > Temp min 25ºC  </div>
+      </div>
+
+      <div class="descripcion">Intervalos nubosos</div>
+       
+      <div class="descripcion">
+          <a href="{{ url_for('ciudad_url',ciudad='madrid' ) }}">mas detalles </a><br>
+      </div>
+    </div>
+
+    <div id="caja" class="c10">
+      <h2 style="text-align: center; margin-bottom: 0px;" >Alcala Heranes</h2>
+        <hr />
+      <div class="temp_contenedor" >
+        <div class="temp"> Temp max 20ºC  </div>
+        <div class="temp" style="text-align: center"> Temp min 25ºC  </div>
+      </div>
+
+      <div class="descripcion">Intervalos nubosos</div>
+
+      <div class="descripcion">
+          <a href="{{ url_for('ciudad_url',ciudad='alcala_heranes') }}">mas detalles </a><br>
+        </div>
+    </div>
+
+    <div id="caja" class="c15">
+      <h2 style="text-align: center; margin-bottom: 0px;" >Getafe</h2>
+        <hr />
+      <div class="temp_contenedor" >
+        <div class="temp"> Temp max 20ºC  </div>
+        <div class="temp" style="text-align: center"> Temp min 25ºC  </div>
+      </div>
+
+      <div class="descripcion">Intervalos nubosos</div>
+        <div class="descripcion">
+          <a href="{{ url_for('ciudad_url',ciudad='getafe') }}">mas detalles </a><br>
+        </div>
+    </div>
+
+</div>
+
+<div class="contenedor">
+      <div id="caja" class="c20">
+        <h2 style="text-align: center; margin-bottom: 0px;" >Collado Villalba</h2>
+          <hr />
+        <div class="temp_contenedor" >
+          <div class="temp"> Temp max 20ºC  </div>
+          <div class="temp" style="text-align: center"> Temp min 25ºC  </div>
+        </div>
+  
+        <div class="descripcion">Intervalos nubosos</div> 
+        <div class="descripcion">
+            <a href="{{ url_for('ciudad_url',ciudad='collado_villalba') }}">mas detalles </a><br>
+        </div>
+      </div>
+  
+ 
+      <div id="caja" class="c30">
+        <h2 style="text-align: center; margin-bottom: 0px;" >Navalcarnero</h2>
+          <hr />
+        <div class="temp_contenedor" >
+          <div class="temp"> Temp max 20ºC  </div>
+          <div class="temp" style="text-align: center"> Temp min 25ºC  </div>
+        </div>
+      
+        <div class="descripcion">Intervalos nubosos</div> 
+        <div class="descripcion">
+            <a href="{{ url_for('ciudad_url',ciudad='navalcarnero') }}" style="text-align: center;">mas detalles </a><br>
+        </div>
+      </div>
+  
+</div>
+
+
+
 
 {% endblock %}
 
