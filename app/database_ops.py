@@ -6,8 +6,8 @@ import datetime
 
 class  SQLInitializer:
       def __init__(self):
-            connection_string = 'postgresql://root:root@flask-db:5432/root'
-            # connection_string = 'postgresql://root:root@localhost:5432/root'
+            # connection_string = 'postgresql://root:root@flask-db:5432/root'
+            connection_string = 'postgresql://root:root@localhost:5432/root'
             self.engine = create_engine(connection_string, echo=True)    
 
 class DatabaseManager(SQLInitializer):
