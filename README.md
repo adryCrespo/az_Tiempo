@@ -11,4 +11,6 @@ Esta aplicación consta de dos contenedores de docker, uno que actua como servid
 Además, se ha implementado un sistema de CI/CD usando una combinación de github actions y Azure Resource Manager con los que se consigue un despliegue e integración automática.
 
 
-
+```
+http://az-tiempo-project.uksouth.azurecontainer.io:8000/
+```
