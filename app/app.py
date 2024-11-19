@@ -17,6 +17,7 @@ import base64
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+from logica_css import get_css
 # import logging
 
 # logging.basicConfig(filename='my_log.log', level=logging.INFO)
@@ -31,14 +32,16 @@ connection_string = 'postgresql://root:root@localhost:5432/root'
 engine = create_engine(connection_string, echo=True)
 CIUDADES = ["madrid","alcala_heranes","getafe","collado_villalba","navalcarnero"]
 
+     
 
+            
 @app.route('/',methods=["GET","POST"]) 
 def home(): 
     factory = Resumen_factory()
     resumen = factory.crear_resumen()
     ciudades = CIUDADES
     insertar_datos_ciudades(resumen=resumen, ciudades=CIUDADES)
-    return render_template("index.html",resumen=resumen,ciudades=ciudades)
+    return render_template("index.html",resumen=resumen,ciudades=ciudades, get_css =get_css)
 
 @app.template_filter('formato_nombre_ciudad')
 def formato_nombre_ciudad(s:str):
