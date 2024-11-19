@@ -35,7 +35,7 @@
 
 <div class="contenedor">
   {% for ciudad in ciudades[3:] %}
-      <div id="caja" class="c20">
+      <div id="caja" class="{{get_css(resumen.get_dato_ciudad_atributo(ciudad,'t_max') )}}">
         <h2 style="text-align: center; margin-bottom: 0px;" >{{ciudad|formato_nombre_ciudad}}</h2>
           <hr />
         <div class="temp_contenedor" >

@@ -12,6 +12,7 @@ env:
   parameter_file_ACI : IaC/param_aci.json
   container_registry : azTiempoCr
   cr_server : azTiempoCr.azurecr.io/az-tiempo
+  container_instance: az-tiempo
 
 
 jobs:
@@ -53,19 +54,7 @@ jobs:
           - name: deploy aci
             run: |
               az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=${{env.container_registry_pass}}
-              az container restart --name az-tiempo  --resource-group ${{env.resource-group}}
+              az container restart --name ${{env.container_instance}}  --resource-group ${{env.resource-group}}
 
 
-          # - name : pss cri2
-          #   run: |
-          #    echo "aaa   $cri_pass"
-
-          # - name: arm_template_ACI
-          #   uses: ./.github/actions/azTemplateP
-          #   with:
-          #       AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
-          #       SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
-          #       location: ${{env.location}}
-          #       resource_group: ${{env.resource-group}}
-          #       ARM_TEMPLATE: ${{env.ARM_TEMPLATE_ACI}}
-          #       parametros_file: ${{env.parameter_file_ACI}}           
+   
