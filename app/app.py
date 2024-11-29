@@ -26,7 +26,7 @@ from logica_css import get_css
 # logger = logging.getLogger(__name__)
 
 app = Flask(__name__,template_folder="template",static_folder="static",static_url_path="/")
-p=1
+# p=1
 # connection_string = 'postgresql://root:root@flask-db:5432/root'
 # connection_string = 'postgresql://root:root@localhost:5432/root'
 # engine = create_engine(connection_string, echo=True)
