@@ -28,8 +28,8 @@ from logica_css import get_css
 app = Flask(__name__,template_folder="template",static_folder="static",static_url_path="/")
 p=1
 # connection_string = 'postgresql://root:root@flask-db:5432/root'
-connection_string = 'postgresql://root:root@localhost:5432/root'
-engine = create_engine(connection_string, echo=True)
+# connection_string = 'postgresql://root:root@localhost:5432/root'
+# engine = create_engine(connection_string, echo=True)
 CIUDADES = ["madrid","alcala_heranes","getafe","collado_villalba","navalcarnero"]
 
      
@@ -40,7 +40,7 @@ def home():
     factory = Resumen_factory()
     resumen = factory.crear_resumen()
     ciudades = CIUDADES
-    insertar_datos_ciudades(resumen=resumen, ciudades=CIUDADES)
+    # insertar_datos_ciudades(resumen=resumen, ciudades=CIUDADES)
     return render_template("index.html",resumen=resumen,ciudades=ciudades, get_css =get_css)
 
 @app.template_filter('formato_nombre_ciudad')
@@ -49,11 +49,11 @@ def formato_nombre_ciudad(s:str):
     return ' '.join(word.capitalize() for word in temp.split())
 
 
-def insertar_datos_ciudades( resumen:Resumen_meteorologico, ciudades:list = None ):
-        insert_SQL_instance = InsertSQLManager()
-        for ciudad in ciudades:
-             t_min, t_max = resumen.get_dato_ciudad(nombre_ciudad=ciudad)
-             insert_SQL_instance.insert_row_db(ciudad,t_min,t_max)
+# def insertar_datos_ciudades( resumen:Resumen_meteorologico, ciudades:list = None ):
+#         insert_SQL_instance = InsertSQLManager()
+#         for ciudad in ciudades:
+#              t_min, t_max = resumen.get_dato_ciudad(nombre_ciudad=ciudad)
+#              insert_SQL_instance.insert_row_db(ciudad,t_min,t_max)
 
 
 @app.template_filter('b64encode')
@@ -62,15 +62,16 @@ def b64encode(s):
 
 @app.route('/ciudad/<ciudad>', methods=['GET'])
 def ciudad_url(ciudad):
-    if request.method == "GET":
-        if ciudad not in CIUDADES:
-            return render_template('404.html'), 404
+     return f"ciudad {ciudad} no implementada"
+    # if request.method == "GET":
+    #     if ciudad not in CIUDADES:
+    #         return render_template('404.html'), 404
         
 
-        now = datetime.datetime.now()
-        day = now.date().strftime("%d-%m-%Y")
+    #     now = datetime.datetime.now()
+    #     day = now.date().strftime("%d-%m-%Y")
 
-        return render_template("ciudad.html",ciudad = ciudad, dia=day)
+    #     return render_template("ciudad.html",ciudad = ciudad, dia=day)
 
 
 

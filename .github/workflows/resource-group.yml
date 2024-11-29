@@ -51,10 +51,6 @@ jobs:
 
 
 
-          - name: deploy aci
-            run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=${{env.container_registry_pass}}
-              az container restart --name ${{env.container_instance}}  --resource-group ${{env.resource-group}}
 
 
    
