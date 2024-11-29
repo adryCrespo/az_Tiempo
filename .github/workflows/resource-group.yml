@@ -23,9 +23,15 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
-          - name: crear resource group
-            run: |
-              az group create --location ${{env.location}} --name ${{env.container_instance}}
+
+
+          - name: az init
+            uses: ./.github/actions/azInit
+            with:
+              AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+              SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
+              location: ${{env.location}}
+              resource_group: ${{env.resource-group}}
       
           - name: deploy_container_registry
             uses: ./.github/actions/azTemplateP
