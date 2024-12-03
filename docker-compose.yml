@@ -11,21 +11,8 @@ services:
     volumes: 
       - ./app:/var/app/flask_app 
     ports:
-      - "8000:8000"
+      - "5000:50505"
   
 
 
-#   flask-db :
-#     restart: always
-#     build:
-#       context: ./database
-#       dockerfile: Dockerfile
-#     container_name: flask-db 
-#     ports:
-#       - "5432:5432"
-#     volumes: 
-#       - database-folder:/var/lib/postgresql
-
-# volumes:
-#   database-folder:
 

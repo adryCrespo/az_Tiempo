@@ -7,8 +7,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /var/app/flask_app 
 ENV FLASK_APP ../app.py 
 # CMD exec gunicorn -w 1 -b :8000 app:app --reload
-EXPOSE 50505
-
-ENTRYPOINT ["gunicorn", "app:app"]
+# EXPOSE 50505
+CMD exec gunicorn   -w 1 -b :8000 app:app 
+# ENTRYPOINT ["gunicorn", "app:app"]
 
  
