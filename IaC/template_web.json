@@ -59,7 +59,7 @@
         "dockerRegistryStartupCommand": {
             "type": "string"
         },
-        "WEBSITES_PORT": {
+        "websitesPort": {
             "type": "string",
             "metadata": {
                 "description": "description"
@@ -99,7 +99,7 @@
                         },
                         {
                             "name": "WEBSITES_PORT",
-                             "value": "[parameters('WEBSITES_PORT')]"
+                             "value": "[parameters('websitesPort')]"
                         }
                     ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
