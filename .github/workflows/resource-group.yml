@@ -66,6 +66,6 @@ jobs:
 
           - name: deploy_web app
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.container_registry_pass}} dockerRegistryPassword=${{secrets.SP_PASSWD}}
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.parameter_file_WEB}}   --parameters dockerRegistryPassword=${{env.container_registry_pass}} 
 
    
