@@ -62,16 +62,19 @@ def b64encode(s):
 
 @app.route('/ciudad/<ciudad>', methods=['GET'])
 def ciudad_url(ciudad):
-     return f"ciudad {ciudad} no implementada"
-    # if request.method == "GET":
-    #     if ciudad not in CIUDADES:
-    #         return render_template('404.html'), 404
+    if request.method == "GET":
+        if ciudad not in CIUDADES:
+            return render_template('404.html'), 404
+        
+    # return f"ciudad {ciudad} no implementada"
         
 
-    #     now = datetime.datetime.now()
-    #     day = now.date().strftime("%d-%m-%Y")
-
-    #     return render_template("ciudad.html",ciudad = ciudad, dia=day)
+        now = datetime.datetime.now()
+        day = now.date().strftime("%d-%m-%Y")
+        # dato
+        dbm = DatabaseManager()
+        dato = dbm.contar_numeros_ciudad(ciudad=ciudad)
+        return render_template("ciudad.html",ciudad = ciudad, dia=day,dato=dato)
 
 
 
