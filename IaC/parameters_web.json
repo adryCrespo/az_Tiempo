@@ -58,6 +58,8 @@
         },
         "dockerRegistryStartupCommand": {
             "value": ""
+        },
+        "WEBSITES_PORT": {
+            "value": "8000"
         }
-    }
 }
