@@ -65,13 +65,7 @@ jobs:
 
 
           - name: deploy_web app
-            uses: ./.github/actions/azTemplateP
-            with:
-               AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
-               SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
-               location: ${{env.location}}
-               resource_group: ${{env.resource-group}}
-               ARM_TEMPLATE: ${{env.ARM_TEMPLATE_WEB}}
-               parametros_file: ${{env.parameter_file_WEB}}
+            run: |
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.parameter_file_WEB}} dockerRegistryPassword=dockerRegistryPassword
 
    
