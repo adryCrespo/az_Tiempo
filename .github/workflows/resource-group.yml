@@ -45,7 +45,7 @@ jobs:
 
           - name: deploy_uami
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_CONTAINER}} --parameters ${{env.parameter_uami}}   --parameters name=${{env.uami-name}} 
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_UAMI}} --parameters ${{env.parameter_uami}}   --parameters name=${{env.uami-name}} 
 
 
 
