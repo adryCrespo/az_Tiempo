@@ -83,7 +83,7 @@
                 "type":"UserAssigned",
                  "userAssignedIdentities":{
 
-                    "[resourceId(  
+                    "[
                         concat( 
                             '/subscriptions/',
                             parameters('subscriptionId'),
@@ -91,7 +91,8 @@
                             variables('rs'),
                             '/providers/Microsoft.ManagedIdentity/userAssignedIdentities/',
                              variables('identityName') 
-                            ) )]": {}
+                            )
+                             ]": {}
                  }
             },
             "tags": null,
