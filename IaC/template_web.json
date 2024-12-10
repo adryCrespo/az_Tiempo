@@ -67,6 +67,12 @@
             "metadata": {
                 "description": "description"
             }
+        },
+        "uami-name": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
         }
     },
     "variables": {
@@ -82,17 +88,8 @@
             "identity":{
                 "type":"UserAssigned",
                  "userAssignedIdentities":{
-
-                    "[
-                        concat( 
-                            '/subscriptions/',
-                            parameters('subscriptionId'),
-                            '/resourceGroups/',
-                            variables('rs'),
-                            '/providers/Microsoft.ManagedIdentity/userAssignedIdentities/',
-                             variables('identityName') 
-                            )
-                             ]": {}
+                
+                       "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('uami-name'))]" : {}
                  }
             },
             "tags": null,
