@@ -45,7 +45,7 @@
             "value": "0"
         },
         "linuxFxVersion": {
-            "value": "DOCKER|aztiempocr.azurecr.io/az-tiempo/flask-server:latest"
+            "value": "DOCKER|aztiempocr.azurecr.io/az-tiempo/flask-server"
         },
         "dockerRegistryUrl": {
             "value": "https://aztiempocr.azurecr.io"

@@ -47,6 +47,9 @@
         "linuxFxVersion": {
             "type": "string"
         },
+        "linuxFxVersion_tag": {
+            "type": "string"
+        },
         "dockerRegistryUrl": {
             "type": "string"
         },
@@ -102,7 +105,7 @@
                              "value": "[parameters('websitesPort')]"
                         }
                     ],
-                    "linuxFxVersion": "[parameters('linuxFxVersion')]",
+                    "linuxFxVersion": "[concat(parameters('linuxFxVersion'),':',parameters('linuxFxVersion_tag')) ]",
                     "appCommandLine": "[parameters('dockerRegistryStartupCommand')]",
                     "alwaysOn": "[parameters('alwaysOn')]",
                     "ftpsState": "[parameters('ftpsState')]"
