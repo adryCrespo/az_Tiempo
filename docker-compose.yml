@@ -11,7 +11,7 @@ services:
     volumes: 
       - ./app:/var/app/flask_app 
     ports:
-      - "5000:50505"
+      - "8000:8000"
   
 
 

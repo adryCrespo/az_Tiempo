@@ -18,15 +18,26 @@ import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from logica_css import get_css
-# import logging
+import logging
 
-# logging.basicConfig(filename='my_log.log', level=logging.INFO)
+import logging
 
-# # Create a logger instance
-# logger = logging.getLogger(__name__)
+# Create a logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Create a handler
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+
+# Create a formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+# Add the handler to the logger
+logger.addHandler(handler)
 
 app = Flask(__name__,template_folder="template",static_folder="static",static_url_path="/")
-p=1
 # connection_string = 'postgresql://root:root@flask-db:5432/root'
 # connection_string = 'postgresql://root:root@localhost:5432/root'
 # engine = create_engine(connection_string, echo=True)
@@ -40,6 +51,7 @@ def home():
     factory = Resumen_factory()
     resumen = factory.crear_resumen()
     ciudades = CIUDADES
+    logger.info("pagina inicial")
     # insertar_datos_ciudades(resumen=resumen, ciudades=CIUDADES)
     return render_template("index.html",resumen=resumen,ciudades=ciudades, get_css =get_css)
 
@@ -72,8 +84,11 @@ def ciudad_url(ciudad):
         now = datetime.datetime.now()
         day = now.date().strftime("%d-%m-%Y")
         # dato
+        logger.info(f"ciudad: {ciudad} \t dia: {day}")
+
         dbm = DatabaseManager()
         dato = dbm.contar_numeros_ciudad(ciudad=ciudad)
+        logger.info(f"dato sql: {dato}")
         return render_template("ciudad.html",ciudad = ciudad, dia=day,dato=dato)
 
 
