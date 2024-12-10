@@ -7,7 +7,10 @@ import datetime
 class  SQLInitializer:
       def __init__(self):
             # connection_string = 'postgresql://root:root@flask-db:5432/root'
-            connection_string = 'Server=tcp:server201124.database.windows.net,1433;Initial Catalog=db201124;Persist Security Info=False;User ID=8718f41f-38f7-4fb9-ba85-aabe535ec5f1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Authentication="Active Directory Managed Identity";'
+            # connection_string = 'Server=tcp:server201124.database.windows.net,1433;Initial Catalog=db201124;Persist Security Info=False;User ID=8718f41f-38f7-4fb9-ba85-aabe535ec5f1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Authentication="Active Directory Managed Identity";'
+            
+            #sql authen- connection_string = 'Server=tcp:server201124.database.windows.net,1433;Database=db201124;Uid=admin112;Pwd=Lololo112;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+            connection_string = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:server201124.database.windows.net,1433;Database=db201124;Uid=admin112;Pwd=Lololo112;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
             self.engine = create_engine(connection_string, echo=True)    
 
 class DatabaseManager(SQLInitializer):
