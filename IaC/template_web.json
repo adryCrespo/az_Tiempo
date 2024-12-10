@@ -70,7 +70,8 @@
         }
     },
     "variables": {
-        "identityName": "uami2"
+        "identityName": "uami2",
+        "rs": "prueba_201124"
     },
     "resources": [
         {
@@ -81,7 +82,16 @@
             "identity":{
                 "type":"UserAssigned",
                  "userAssignedIdentities":{
-                    "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName'))]": {}
+
+                    "[resourceId(  
+                        concat( 
+                            '/subscriptions/',
+                            parameters('subscriptionId'),
+                            '/resourceGroups/',
+                            variables('rs'),
+                            '/providers/Microsoft.ManagedIdentity/userAssignedIdentities/',
+                             variables('identityName') 
+                            ) )]": {}
                  }
             },
             "tags": null,
