@@ -76,7 +76,7 @@ jobs:
 
           - name : uami client_id 
             run: |
-             echo "uamiClientId=$(az identity show --ids /subscriptions/${{secrets.SUBSCRIBE_ID}}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
+             echo "uamiClientId=$(az identity show --ids /subscriptions/${{env.SUBSCRIPTION_ID}}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
              echo ${{env.uamiClientId}}
 
 
