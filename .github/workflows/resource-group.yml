@@ -74,10 +74,14 @@ jobs:
             run: |
              echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
 
+          - name : uami client_id 
+            run: |
+             echo "uamiClientId=$(az identity show --ids /subscriptions/${{ secrets.SUBSCRIBE_ID}}}}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
+
 
 
           - name: deploy_web app
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.parameter_file_WEB}}   --parameters dockerRegistryPassword=${{env.container_registry_pass}} linuxFxVersion_tag=${{ github.sha }} uami-name=${{env.uami-name}}
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.parameter_file_WEB}}   --parameters dockerRegistryPassword=${{env.container_registry_pass}} linuxFxVersion_tag=${{ github.sha }} uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
 
    

@@ -73,11 +73,16 @@
             "metadata": {
                 "description": "description"
             }
+        },
+        "uamiClientId": {
+            "type": "securestring",
+            "metadata": {
+                "description": "description"
+            }
         }
     },
     "variables": {
-        "identityName": "uami2",
-        "rs": "prueba_201124"
+        "resourceIdUami": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('uami-name'))]"
     },
     "resources": [
         {
@@ -89,7 +94,7 @@
                 "type":"UserAssigned",
                  "userAssignedIdentities":{
                 
-                       "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('uami-name'))]" : {}
+                       "[variables('resourceIdUami')]" : {}
                  }
             },
             "tags": null,
@@ -119,6 +124,17 @@
                         {
                             "name": "WEBSITES_PORT",
                              "value": "[parameters('websitesPort')]"
+                        },
+                        {
+                            "name": "AZURE_CLIENT_ID",
+                            "value": "[parameters('uamiClientId')]"
+                        }
+                    ],
+                "connectionStrings": [
+                        {
+                        "connectionString": "Driver={ODBC Driver 18 for SQL Server};Server=tcp:tiempo-server.database.windows.net,1433;Database=tiempoDB;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30",
+                        "name": "AZURE_SQL_CONNECTIONSTRING",
+                        "type": "SQLAzure"
                         }
                     ],
                     "linuxFxVersion": "[concat(parameters('linuxFxVersion'),':',parameters('linuxFxVersion_tag')) ]",
