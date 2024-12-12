@@ -76,8 +76,10 @@ jobs:
 
           - name : uami client_id 
             run: |
-             echo "uamiClientId=$(az identity show --ids /subscriptions/${{secrets.SUBSCRIBE_ID}}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
+             subValue=$(cat ${{env.parameter_file_WEB}} | jq -r '.parameters.subscriptionId.value')
+             echo "uamiClientId=$(az identity show --ids /subscriptions/${subValue}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
              echo ${{env.uamiClientId}}
+             echo $subValue
 
 
           - name: deploy_web app
