@@ -75,7 +75,7 @@
             }
         },
         "uamiClientId": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "description"
             }
