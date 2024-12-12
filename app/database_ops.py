@@ -4,7 +4,8 @@ import psycopg2
 import datetime
 import os
 
-import pyodbc, struct
+import pyodbc
+import struct
 from azure import identity
 
 class  SQLInitializer:

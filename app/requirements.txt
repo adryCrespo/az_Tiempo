@@ -11,3 +11,4 @@ requests
 numpy
 azure-identity
 pyodbc
+struct
