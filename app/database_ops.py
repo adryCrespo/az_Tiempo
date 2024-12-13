@@ -37,18 +37,18 @@ class  SQLInitializer:
 class DatabaseManager(SQLInitializer):
 
     def query_ciudad_db(self,ciudad:str):
-            sql = text(f"select * from public.ciudades where ciudad='{ciudad}'")
+            sql = text(f"select * from dbo.ciudades where ciudad='{ciudad}'")
             with self.engine.connect() as connection:
                 result = connection.execute(sql).fetchall()
             return result
     def query_ciudad_fecha_db(self,ciudad:str, fecha:str):
-            sql = text(f"select * from public.ciudades where ciudad='{ciudad}'and fecha='{fecha}' order by '{fecha}' asc ")
+            sql = text(f"select * from dbo.ciudades where ciudad='{ciudad}'and fecha='{fecha}' order by '{fecha}' asc ")
             with self.engine.connect() as connection:
                 result = connection.execute(sql).fetchall()
             return result
 
     def contar_numeros_ciudad(self, ciudad:str):
-            sql_query = f"select count(*) from public.ciudades where ciudad='{ciudad}'"
+            sql_query = f"select count(*) from dbo.ciudades where ciudad='{ciudad}'"
             return self.query_data(sql_query)
             
             with self.engine.connect() as connection:
