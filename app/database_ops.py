@@ -37,23 +37,31 @@ class  SQLInitializer:
 class DatabaseManager(SQLInitializer):
 
     def query_ciudad_db(self,ciudad:str):
-            sql = text(f"select * from dbo.ciudades where ciudad='{ciudad}'")
+            
+            sql_query = f"select * from dbo.ciudades where ciudad='{ciudad}' order by fecha asc"
+            resultados = self.query_data(sql_query)
+
+            return resultados
             with self.engine.connect() as connection:
                 result = connection.execute(sql).fetchall()
             return result
     def query_ciudad_fecha_db(self,ciudad:str, fecha:str):
-            sql = text(f"select * from dbo.ciudades where ciudad='{ciudad}'and fecha='{fecha}' order by '{fecha}' asc ")
-            with self.engine.connect() as connection:
-                result = connection.execute(sql).fetchall()
-            return result
+            sql_query = f"select * from dbo.ciudades where ciudad='{ciudad}'and fecha='{fecha}' order by fecha asc "
+            resultados = self.query_data(sql_query)
+            return resultados
+            # with self.engine.connect() as connection:
+            #     result = connection.execute(sql).fetchall()
 
     def contar_numeros_ciudad(self, ciudad:str):
             sql_query = f"select count(*) from dbo.ciudades where ciudad='{ciudad}'"
-            return self.query_data(sql_query)
+            resultados = self.query_data(sql_query)
+            resultados = resultados[0][0]
+
+            if not isinstance(resultados,int):
+                  raise TypeError
             
-            with self.engine.connect() as connection:
-                result = connection.execute(sql).fetchall()
-            return result
+            return resultados
+
 class InsertSQLManager(SQLInitializer):
 
 
