@@ -8,7 +8,8 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt 
 COPY . /var/app/flask_app 
 ENV FLASK_APP ../app.py 
-RUN    /var/app/flask_app/entry-drivers.sh 
+RUN ["chmod", "+x",  "/var/app/flask_app/entry-drivers.sh"] 
+RUN  /var/app/flask_app/entry-drivers.sh 
 CMD exec gunicorn   -w 1 -b :8000 app:app 
 
  
