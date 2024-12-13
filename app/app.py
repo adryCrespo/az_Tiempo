@@ -108,7 +108,8 @@ def create_figure(nombre_ciudad:str):
      
      dm = DatabaseManager()
      result = dm.query_ciudad_db(nombre_ciudad)
-     ciudad, fecha, t_min, t_max = zip(*result)
+     logger.info(f"resultados query: {result[:3]}")
+     fecha,ciudad,description, t_min, t_max = zip(*result)
 
      f, ax = plt.subplots(figsize=(12, 7))
      ax.set_title(f'Evolucion Temperaturas a lo largo del tiempo en {nombre_ciudad}',fontsize=15,fontweight='bold')
