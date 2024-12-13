@@ -101,6 +101,9 @@ def plot_png(ciudad):
     output.seek(0)
     return Response(output.getvalue(), mimetype='image/png')
 
+
+# def create_figure(nombre_ciudad:str):
+#     pass
 def create_figure(nombre_ciudad:str):
      
      dm = DatabaseManager()
