@@ -1,16 +1,16 @@
 
 from flask import Flask,request,render_template,Response, jsonify
 # from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
-from flask_migrate import Migrate
+# from sqlalchemy import create_engine
+# from flask_migrate import Migrate
 # from config import Config
-from http import HTTPStatus
-from sqlalchemy import text
+# from http import HTTPStatus
+# from sqlalchemy import text
 import json
-import psycopg2
+# import psycopg2
 from Tiempo import Resumen_factory, Resumen_meteorologico
 import datetime
-from database_ops import DatabaseManager,InsertSQLManager
+from database_ops import DatabaseManager
 import matplotlib.pyplot as plt
 import io
 import base64
@@ -20,7 +20,6 @@ from matplotlib.figure import Figure
 from logica_css import get_css
 import logging
 
-import logging
 
 # Create a logger
 logger = logging.getLogger(__name__)
@@ -102,8 +101,7 @@ def plot_png(ciudad):
     return Response(output.getvalue(), mimetype='image/png')
 
 
-# def create_figure(nombre_ciudad:str):
-#     pass
+
 def create_figure(nombre_ciudad:str):
      
      dm = DatabaseManager()
