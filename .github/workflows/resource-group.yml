@@ -12,7 +12,7 @@ env:
   
   ARM_TEMPLATE_AFC: IaC/template_azfunction.json
   parameter_AFC : IaC/param_azfunction.json
-
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: az_fc/.
 
   ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
   parameter_file_container : IaC/param_container.json
@@ -58,11 +58,18 @@ jobs:
                  echo ${{env.uamiClientId}}
                  echo $subValue
 
-          - name: deploy azure fcs
+          - name: deploy function app
             run: |
               az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters ${{env.parameter_AFC}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
      
-
+          - name: deploy azure function
+            uses: Azure/functions-action@v1
+            id: fa
+            with:
+              app-name: db-timer
+              package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+              scm-do-build-during-deployment: true
+              enable-oryx-build: true
 
 
           - name: deploy_container_registry
