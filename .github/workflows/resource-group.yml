@@ -1,6 +1,9 @@
 name: resourcegroup_deployment
 on: 
-    push
+  push:
+    branches: [main]
+
+
 env:
   SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
   location: uksouth
