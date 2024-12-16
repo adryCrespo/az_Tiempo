@@ -12,7 +12,7 @@ env:
   
   ARM_TEMPLATE_AFC: IaC/template_azfunction.json
   parameter_AFC : IaC/param_azfunction.json
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: az_fc/.
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: az_fc
 
   ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
   parameter_file_container : IaC/param_container.json
@@ -67,7 +67,7 @@ jobs:
             id: fa
             with:
               app-name: tiempo-etl-datos
-              package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+              package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ouput'
               scm-do-build-during-deployment: true
               enable-oryx-build: true
 
