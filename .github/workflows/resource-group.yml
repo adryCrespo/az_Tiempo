@@ -70,6 +70,7 @@ jobs:
             with:
               app-name: tiempo-etl-datos
               package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+              remote-build: true
    
 
 
