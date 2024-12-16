@@ -1,7 +1,6 @@
 name: resourcegroup_deployment
 on: 
-  push:
-    branches: [main]
+  push
 
 
 env:
@@ -65,13 +64,12 @@ jobs:
             run: |
               az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters ${{env.parameter_AFC}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
      
-          # - name: deploy azure function
-          #   uses: Azure/functions-action@v1
-          #   id: fa
-          #   with:
-          #     app-name: tiempo-etl-datos
-          #     package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+          - name: deploy azure function
+            uses: Azure/functions-action@v1
+            id: fa
+            with:
+              app-name: tiempo-etl-datos
+              package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
    
 
 
