@@ -60,7 +60,7 @@ jobs:
 
           - name: deploy azure fcs
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters ${{env.param_azfunction}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
      
 
 
