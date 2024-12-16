@@ -122,7 +122,7 @@
                         }
                     },
                     "scaleAndConcurrency": {
-                        "maximumInstanceCount": 3,
+                        "maximumInstanceCount": 40,
                         "instanceMemoryMB": 2048
                     },
                     "runtime": {
