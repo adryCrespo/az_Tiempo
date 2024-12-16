@@ -40,6 +40,9 @@
         },
         "alwaysOn": {
             "value": false
+        },
+        "insightName": {
+            "value": "monitor-etl"
         }
     }
 }

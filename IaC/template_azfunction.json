@@ -54,6 +54,13 @@
             "metadata": {
                 "description": "description"
             }
+        
+        },
+        "insightName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
         }
 
 
@@ -79,6 +86,7 @@
                  }
             },
             "dependsOn": [
+                "[concat('microsoft.insights/components/',parameters('insightName'))]",
                 "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
             ],
@@ -89,6 +97,11 @@
                         {
                             "name": "DEPLOYMENT_STORAGE_CONNECTION_STRING",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        
+                        {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "[reference(concat('microsoft.insights/components/',parameters('insightName')), '2015-05-01').ConnectionString]"
                         },
                         {
                             "name": "AzureWebJobsStorage",
@@ -180,6 +193,24 @@
                 "Name": "[parameters('skuCode')]"
             }
         },
+        {
+            "apiVersion": "2020-02-02-preview",
+            "name": "[parameters('insightName')]",
+            "type": "microsoft.insights/components",
+            "location": "uksouth",
+            "tags": {},
+            "dependsOn": [],
+            "properties": {
+                "ApplicationId": "[parameters('name')]",
+                "Request_Source": "IbizaWebAppExtensionCreate",
+                "Flow_Type": "Redfield",
+                "Application_Type": "web",
+                "WorkspaceResourceId": "[concat('/subscriptions/',parameters('subscriptionId'),
+                                                '/resourceGroups/DefaultResourceGroup-SUK/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-',
+                                                parameters('subscriptionId'),'-SUK')]"
+            }
+        },
+
         {
             "apiVersion": "2022-05-01",
             "type": "Microsoft.Storage/storageAccounts",
