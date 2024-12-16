@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "946ef4a8-c168-4a2a-9c7a-75a36d891088"
+        },
+        "name": {
+            "value": "tiempo-etl-datos"
+        },
+        "location": {
+            "value": "UK South"
+        },
+        "storageBlobContainerName": {
+            "value": "app-package-tiempo-etl-datos-f4a934a"
+        },
+        "storageAccountName": {
+            "value": "prueba201124b77a"
+        },
+        "sku": {
+            "value": "FlexConsumption"
+        },
+        "skuCode": {
+            "value": "FC1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "hostingPlanName": {
+            "value": "ASP-prueba201124-8379"
+        },
+        "serverFarmResourceGroup": {
+            "value": "az_tiempo"
+        },
+        "alwaysOn": {
+            "value": false
+        }
+    }
+}

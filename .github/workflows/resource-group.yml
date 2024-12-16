@@ -10,6 +10,10 @@ env:
   ARM_TEMPLATE_UAMI: IaC/template_uami.json
   parameter_uami : IaC/parameters_uami.json
   
+  ARM_TEMPLATE_AFC: IaC/template_azfunction.json
+  parameter_AFC : IaC/param_azfunction.json
+
+
   ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
   parameter_file_container : IaC/param_container.json
 
@@ -41,11 +45,23 @@ jobs:
               SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
               location: ${{env.location}}
               resource_group: ${{env.resource-group}}
-
-
+              
+              
           - name: deploy_uami
             run: |
               az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_UAMI}} --parameters ${{env.parameter_uami}}   --parameters name=${{env.uami-name}} 
+              
+          - name : uami client_id 
+            run: |
+                 subValue=$(cat ${{env.parameter_file_WEB}} | jq -r '.parameters.subscriptionId.value')
+                 echo "uamiClientId=$(az identity show --ids /subscriptions/${subValue}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
+                 echo ${{env.uamiClientId}}
+                 echo $subValue
+
+          - name: deploy azure fcs
+            run: |
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
+     
 
 
 
@@ -74,12 +90,6 @@ jobs:
             run: |
              echo "container_registry_pass=$(az acr credential show --name azTiempoCr --query 'passwords[0].value')" >> "$GITHUB_ENV"
 
-          - name : uami client_id 
-            run: |
-             subValue=$(cat ${{env.parameter_file_WEB}} | jq -r '.parameters.subscriptionId.value')
-             echo "uamiClientId=$(az identity show --ids /subscriptions/${subValue}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
-             echo ${{env.uamiClientId}}
-             echo $subValue
 
 
           - name: deploy_web app
