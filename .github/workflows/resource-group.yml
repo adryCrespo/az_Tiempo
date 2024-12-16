@@ -67,7 +67,7 @@ jobs:
             id: fa
             with:
               app-name: tiempo-etl-datos
-              package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ouput'
+              package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
               scm-do-build-during-deployment: true
               enable-oryx-build: true
 
