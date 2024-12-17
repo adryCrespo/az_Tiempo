@@ -35,15 +35,29 @@ def get_conn():
 # sql = text(f"select * from dbo.ciudades where ciudad=madrid")
 
 import pandas as pd
-df = pd.read_csv("database/datos_nuevos.csv")
-data = df.apply(tuple,axis=1).tolist()
+# df = pd.read_csv("database/datos_nuevos.csv")
+# data = df.apply(tuple,axis=1).tolist()
 
-sql = "INSERT INTO dbo.ciudades (fecha, ciudad, descripcion, t_min, t_max) VALUES (?, ?, ?,?,?)"
-params = [tuple(row) for row in data]
-with get_conn() as connection:
-    cursor = connection.cursor()
-    cursor.executemany(sql, params)
-    connection.commit()
+def cambio_fecha(fecha:str):
+    dia, mes, year = fecha.split("-")
+    return f"{year}-{mes}-{dia}"
+
+data = {'fecha': '2024-12-17', 'nombre': 'collado_villalba', 'descripcion': 'Nubes altas', 't_min': '-1', 't_max': '11'}
+temp = data["fecha"] 
+print(temp)
+new_temp = cambio_fecha(temp)
+print(new_temp)
+
+data.update({'fecha':new_temp})
+print(data) 
+data2 = [data]
+
+# sql = "INSERT INTO dbo.ciudades (fecha, ciudad, descripcion, t_min, t_max) VALUES (?, ?, ?,?,?)"
+# params = [tuple(row) for row in data]
+# with get_conn() as connection:
+#     cursor = connection.cursor()
+#     cursor.executemany(sql, params)
+#     connection.commit()
 
 
 

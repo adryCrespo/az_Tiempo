@@ -11,13 +11,13 @@ class Parte_diario:
 
 @dataclass
 class Ciudad:
-    nombre: str
+    ciudad: str
     descripcion : str
     t_min: float
     t_max: float 
 
     def get_data(self, atributo:str):
-        if atributo not in ["nombre", "description", "t_min", "t_max"]:
+        if atributo not in ["ciudad", "description", "t_min", "t_max"]:
             TypeError("atributo desconocido")
         atr_dict = {
         "description":self.descripcion,
@@ -30,11 +30,13 @@ class Ciudad:
     
     def toSQL(self):
         hoy = datetime.date.today()
-        fecha_formateada = hoy.strftime("%d-%m-%Y")
+        fecha_formateada = hoy.strftime("%Y-%m-%d")
         fecha_dict = {"fecha": fecha_formateada}
         temp = self.__dict__.copy()
         return dict(fecha_dict,**temp)
-        
+
+
+
 class Resumen_factory:
     def __init__(self):
         CIUDADES = {
@@ -81,17 +83,17 @@ class Resumen_meteorologico:
         self.ciudades.update({nombre_ciudad:ciudad})
 
     def get_dato_ciudad_atributo(self, nombre_ciudad,atributo):
-        if atributo not in ["nombre", "description", "t_min", "t_max"]:
+        if atributo not in ["ciudad", "description", "t_min", "t_max"]:
             TypeError("atributo desconocido")
 
         ciudad= self.ciudades[nombre_ciudad]
         return ciudad.get_data(atributo)
     
     def get_dato_ciudad(self, nombre_ciudad):
-
-
         ciudad= self.ciudades[nombre_ciudad]
         return (ciudad.get_data("t_min"),ciudad.get_data("t_max")  )  
+    
+
     def get_parte_diario(self):
         return self.parte_diario.resumen
     

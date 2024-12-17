@@ -110,7 +110,8 @@
                     ],
                     "connectionStrings": [
                         {
-                        "connectionString": "Server=tcp:server201124.database.windows.net,1433;Initial Catalog=db201124;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication='Active Directory Managed Identity';User Id='1913d2ac-47e2-4f90-9f4c-23e9816fe0ec';]",
+                        "connectionString": "Server=tcp:tiempo-server.database.windows.net,1433;Initial Catalog=tiempoDB;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication='Active Directory Managed Identity';User Id='1913d2ac-47e2-4f90-9f4c-23e9816fe0ec';"
+,
                         "name": "SqlConnectionString",
                         "type": "SQLAzure"
                         }

@@ -17,27 +17,20 @@ def timer_trigger(myTimer: func.TimerRequest,itemCiudad: func.Out[func.SqlRow]) 
     factory = Resumen_factory()
     resumen = factory.crear_resumen()
 
-
-    # print(resumen.ciudades)
-
-    # for ciudad in resumen.ciudades:
-        # tupla_ciudad = ciudad.__dict__
     sql_rows = []
     for ciudad in resumen.ciudades:
         ciudad_dict = resumen.ciudades[ciudad].toSQL()
-        temp_fecha = ciudad_dict["fecha"]
-        ciudad_dict["fecha"] = cambio_fecha(temp_fecha)
+
         logging.info(ciudad_dict)
         sql_rows.append(func.SqlRow(ciudad_dict) )
         logging.info(f'{ciudad} preparada en db')
     itemCiudad.set(sql_rows)
 
-        # print(type(ciudad))
-        # fecha_dict = {"Fecha":fecha_formateada}
+
 
 
     logging.info('Python timer trigger function executed.')
 
-def cambio_fecha(fecha:str):
-    dia, mes, year = fecha.split("-")
-    return f"{year}-{mes}-{dia}"
+# def cambio_fecha(fecha:str):
+#     dia, mes, year = fecha.split("-")
+#     return f"{year}-{mes}-{dia}"
