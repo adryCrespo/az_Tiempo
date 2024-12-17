@@ -62,7 +62,7 @@ class Resumen_factory:
         descript = temp["stateSky"]["description"]
         t_min = temp["temperatures"]["min"]
         t_max = temp["temperatures"]["max"]
-        return Ciudad(nombre=nombre_ciudad, descripcion=descript, t_min=t_min, t_max=t_max)
+        return Ciudad(ciudad=nombre_ciudad, descripcion=descript, t_min=t_min, t_max=t_max)
         
     def crear_resumen(self):
 
