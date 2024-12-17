@@ -8,7 +8,7 @@ CIUDADES = ["madrid","alcala_heranes","getafe","collado_villalba","navalcarnero"
 
 app = func.FunctionApp()
 @app.function_name(name="dbTimer")
-@app.timer_trigger(schedule="0 10,20 9 * * *", arg_name="myTimer", run_on_startup=False, use_monitor=False) 
+@app.timer_trigger(schedule="0 0,10 7 * * *", arg_name="myTimer", run_on_startup=False, use_monitor=False) 
 @app.generic_output_binding(arg_name="itemCiudad", type="sql", CommandText="dbo.ciudades", ConnectionStringSetting="SqlConnectionString")
 def timer_trigger(myTimer: func.TimerRequest,itemCiudad: func.Out[func.SqlRow]) -> None:
     if myTimer.past_due:
