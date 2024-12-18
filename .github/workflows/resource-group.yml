@@ -1,15 +1,31 @@
 name: resourcegroup_deployment
 on: 
-    push
+  push:
+    branches: [main]
+
+
 env:
   SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
   location: uksouth
   resource-group: az_tiempo 
+
+  uami-name: uami11
+  ARM_TEMPLATE_UAMI: IaC/template_uami.json
+  parameter_uami : IaC/parameters_uami.json
+  
+  ARM_TEMPLATE_AFC: IaC/template_azfunction.json
+  parameter_AFC : IaC/param_azfunction.json
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: az_fc
+
   ARM_TEMPLATE_CONTAINER: IaC/container_registry.json
   parameter_file_container : IaC/param_container.json
 
   ARM_TEMPLATE_ACI: IaC/aci.json
   parameter_file_ACI : IaC/param_aci.json
+ 
+  ARM_TEMPLATE_WEB: IaC/template_web.json
+  parameter_file_WEB : IaC/parameters_web.json
+ 
   container_registry : azTiempoCr
   cr_server : azTiempoCr.azurecr.io/az-tiempo
   container_instance: az-tiempo
@@ -23,7 +39,42 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
-          
+
+
+          - name: az init
+            uses: ./.github/actions/azInit
+            with:
+              AZURE_CREDENTIALS: ${{secrets.AZURE_CREDENTIALS}}
+              SUBSCRIPTION_NAME: ${{secrets.SUBSCRIPTION_NAME}}
+              location: ${{env.location}}
+              resource_group: ${{env.resource-group}}
+              
+              
+          - name: deploy_uami
+            run: |
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_UAMI}} --parameters ${{env.parameter_uami}}   --parameters name=${{env.uami-name}} 
+              
+          - name : uami client_id 
+            run: |
+                 subValue=$(cat ${{env.parameter_file_WEB}} | jq -r '.parameters.subscriptionId.value')
+                 echo "uamiClientId=$(az identity show --ids /subscriptions/${subValue}/resourceGroups/${{env.resource-group}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/${{env.uami-name}} --query clientId)" >> "$GITHUB_ENV"
+                 echo ${{env.uamiClientId}}
+                 echo $subValue
+
+          - name: deploy function app
+            run: |
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_AFC}} --parameters ${{env.parameter_AFC}} --parameters  uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
+     
+          - name: deploy azure function
+            uses: Azure/functions-action@v1
+            id: fa
+            with:
+              app-name: tiempo-etl-datos
+              package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+              remote-build: true
+   
+
+
           - name: deploy_container_registry
             uses: ./.github/actions/azTemplateP
             with:
@@ -40,10 +91,8 @@ jobs:
             run: |
 
               docker login azTiempoCr.azurecr.io --username ${{secrets.SERVICE_PRINCIPAL_ID}} --password ${{secrets.SP_PASSWD}}
-              docker build ./database -t ${{env.cr_server}}/flask-db:latest
-              docker build ./app -t ${{env.cr_server}}/flask-server:latest
-              docker push ${{env.cr_server}}/flask-db:latest
-              docker push ${{env.cr_server}}/flask-server:latest
+              docker build ./app -t ${{env.cr_server}}/flask-server:${{ github.sha }}
+              docker push ${{env.cr_server}}/flask-server:${{ github.sha }}
           
           - name : pss acr
             run: |
@@ -51,10 +100,8 @@ jobs:
 
 
 
-          - name: deploy aci
+          - name: deploy_web app
             run: |
-              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_ACI}} --parameters ${{env.parameter_file_ACI}} --parameters imageRegistryPassword=${{env.container_registry_pass}}
-              az container restart --name ${{env.container_instance}}  --resource-group ${{env.resource-group}}
-
+              az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE_WEB}} --parameters ${{env.parameter_file_WEB}}   --parameters dockerRegistryPassword=${{env.container_registry_pass}} linuxFxVersion_tag=${{ github.sha }} uami-name=${{env.uami-name}} uamiClientId=${{env.uamiClientId}}
 
    

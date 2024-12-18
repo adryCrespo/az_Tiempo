@@ -2,10 +2,8 @@ Flask==2.2.5
 Flask-SQLAlchemy==3.0.4
 Gunicorn==20.1.0
 matplotlib
-Flask-Migrate
-SQLAlchemy
-psycopg2-binary
 requests
-# pytest==7.2.2
-# flask-mysqldb
 numpy
+azure-identity
+pyodbc
+pandas

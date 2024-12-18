@@ -1,0 +1,268 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "storageBlobContainerName": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "skuCode": {
+            "type": "string"
+        },
+        "workerSize": {
+            "type": "string"
+        },
+        "workerSizeId": {
+            "type": "string"
+        },
+        "numberOfWorkers": {
+            "type": "string"
+        },
+        "hostingPlanName": {
+            "type": "string"
+        },
+        "serverFarmResourceGroup": {
+            "type": "string"
+        },
+        "alwaysOn": {
+            "type": "bool"
+        },
+
+
+        "uami-name": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "uamiClientId": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        
+        },
+        "insightName": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        }
+
+
+
+    },
+    "variables": {
+        "resourceIdUami": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('uami-name'))]",
+        "resourceGroupName": "[parameters('serverFarmResourceGroup')]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2023-12-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp,linux",
+            "location": "[parameters('location')]",
+            "tags": {},
+            "identity":{
+                "type":"UserAssigned",
+                 "userAssignedIdentities":{
+                
+                       "[variables('resourceIdUami')]" : {}
+                 }
+            },
+            "dependsOn": [
+                "[concat('microsoft.insights/components/',parameters('insightName'))]",
+                "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+                "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
+            ],
+            "properties": {
+                "name": "[parameters('name')]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "DEPLOYMENT_STORAGE_CONNECTION_STRING",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        
+                        {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "[reference(concat('microsoft.insights/components/',parameters('insightName')), '2015-05-01').ConnectionString]"
+                        },
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        }
+                    ],
+                    "connectionStrings": [
+                        {
+                        "connectionString": "Server=tcp:tiempo-server.database.windows.net,1433;Initial Catalog=tiempoDB;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication='Active Directory Managed Identity';User Id='1913d2ac-47e2-4f90-9f4c-23e9816fe0ec';"
+,
+                        "name": "SqlConnectionString",
+                        "type": "SQLAzure"
+                        }
+                    ],
+                    "cors": {
+                        "allowedOrigins": [
+                            "https://portal.azure.com"
+                        ]
+                    }
+                },
+                "clientAffinityEnabled": false,
+                "virtualNetworkSubnetId": null,
+                "functionAppConfig": {
+                    "deployment": {
+                        "storage": {
+                            "type": "blobContainer",
+                            "value": "[concat('https://', parameters('storageAccountName'), '.blob.', 'core.windows.net', '/', parameters('storageBlobContainerName'))]",
+                            "authentication": {
+                                "type": "StorageAccountConnectionString",
+                                "storageAccountConnectionStringName": "DEPLOYMENT_STORAGE_CONNECTION_STRING"
+                            }
+                        }
+                    },
+                    "scaleAndConcurrency": {
+                        "maximumInstanceCount": 40,
+                        "instanceMemoryMB": 2048
+                    },
+                    "runtime": {
+                        "name": "python",
+                        "version": "3.11"
+                    }
+                },
+                "publicNetworkAccess": "Enabled",
+                "httpsOnly": true,
+                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+            },
+            "resources": [
+                {
+                    "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+                    "apiVersion": "2022-09-01",
+                    "name": "[concat(parameters('name'), '/scm')]",
+                    "properties": {
+                        "allow": false
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('name'))]"
+                    ]
+                },
+                {
+                    "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+                    "apiVersion": "2022-09-01",
+                    "name": "[concat(parameters('name'), '/ftp')]",
+                    "properties": {
+                        "allow": false
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('name'))]"
+                    ]
+                }
+            ]
+        },
+        {
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('hostingPlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[parameters('location')]",
+            "kind": "linux",
+            "tags": {},
+            "dependsOn": [],
+            "properties": {
+                "name": "[parameters('hostingPlanName')]",
+                "workerSize": "[parameters('workerSize')]",
+                "workerSizeId": "[parameters('workerSizeId')]",
+                "numberOfWorkers": "[parameters('numberOfWorkers')]",
+                "reserved": true,
+                "zoneRedundant": false
+            },
+            "sku": {
+                "Tier": "[parameters('sku')]",
+                "Name": "[parameters('skuCode')]"
+            }
+        },
+        {
+            "apiVersion": "2020-02-02-preview",
+            "name": "[parameters('insightName')]",
+            "type": "microsoft.insights/components",
+            "location": "uksouth",
+            "tags": {},
+            "dependsOn": [],
+            "properties": {
+                "ApplicationId": "[parameters('name')]",
+                "Request_Source": "IbizaWebAppExtensionCreate",
+                "Flow_Type": "Redfield",
+                "Application_Type": "web",
+                "WorkspaceResourceId": "[concat('/subscriptions/',parameters('subscriptionId'),
+                                                '/resourceGroups/DefaultResourceGroup-SUK/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-',
+                                                parameters('subscriptionId'),'-SUK')]"
+            }
+        },
+
+        {
+            "apiVersion": "2022-05-01",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[parameters('storageAccountName')]",
+            "dependsOn": [],
+            "location": "[parameters('location')]",
+            "tags": {},
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "properties": {
+                "supportsHttpsTrafficOnly": true,
+                "minimumTlsVersion": "TLS1_2",
+                "defaultToOAuthAuthentication": true,
+                "allowBlobPublicAccess": false
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2021-04-01",
+            "name": "StorageBlobContainerTemplate",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+            ],
+            "resourceGroup": "[variables('resourceGroupName')]",
+            "subscriptionId": "[parameters('subscriptionId')]",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.1",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "name": "[concat(parameters('storageAccountName'), '/default')]",
+                            "type": "Microsoft.Storage/storageAccounts/blobServices",
+                            "apiVersion": "2022-05-01",
+                            "dependsOn": []
+                        },
+                        {
+                            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+                            "apiVersion": "2022-05-01",
+                            "name": "[concat(parameters('storageAccountName'), '/default/', parameters('storageBlobContainerName'))]",
+                            "dependsOn": [
+                                "[resourceId(variables('resourceGroupName'),'Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccountName'), 'default')]"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

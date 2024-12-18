@@ -13,12 +13,6 @@ inputs:
   resource_group:
     description: "nombre del resource group donde se despliegan los servicios"
     required: true
-  ARM_TEMPLATE:
-    description: "arm template json"
-    required: true
-  parametros_file:
-    description: "arm template parameters json"
-    required: true
 
 
 runs:
@@ -41,7 +35,4 @@ runs:
             az group create --name ${{inputs.resource_group}} --location ${{inputs.location}}
           shell: bash
         
-        - name: deployment
-          run: |
-            az deployment group  create  --resource-group ${{inputs.resource_group}}  --template-file ${{inputs.ARM_TEMPLATE}} --parameters ${{inputs.parametros_file}} 
-          shell: bash
+ 
