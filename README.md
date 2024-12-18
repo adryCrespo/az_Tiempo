@@ -2,7 +2,10 @@
 
 az_Tiempo es una aplicación web que proporciona pronósticos meteorológicos personalizados para varios municipios de la Comunidad de Madrid. Desarrollada íntegramente en Azure, esta aplicación sirve como demostración de un flujo de trabajo completo, desde el desarrollo hasta la implementación.
 
+
+
 ## Arquitectura:
+
 
 ![Diseño del proyecto](documentacion\diseno.png)
 
@@ -49,6 +52,8 @@ un grafico donde se muestra la evolucion de las temperaturas máximas y mínimas
 
 
 ![pagina_historico](documentacion\web_historico.png)
+
+
 
 
 
