@@ -7,7 +7,7 @@ az_Tiempo es una aplicación web que proporciona pronósticos meteorológicos pe
 ## Arquitectura:
 
 
-![Diseño del proyecto](documentacion\diseno.png)
+![Diseño del proyecto](documentacion/diseno.png)
 
 Tecnologías clave:
 
