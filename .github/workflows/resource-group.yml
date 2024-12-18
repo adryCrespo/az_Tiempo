@@ -1,6 +1,7 @@
 name: resourcegroup_deployment
 on: 
-  push
+  push:
+    branches: [main]
 
 
 env:
