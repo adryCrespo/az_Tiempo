@@ -41,7 +41,7 @@ Los datos de la base de datos se guardan diariamente mediante una azure function
 La aplicacion tiene dos partes diferenciadas. La página principal, y las páginas propias de cada municipio.
 En la página principal se puede ver los valores de meteorológicos de la fecha actual para los distintos municipios.
 
-![pagina_home](documentacion\web_home.png)
+![pagina_home](documentacion/web_home.png)
 
 El color de fondo de municipios cambia segun el valor de la **temperatura maxima**. Cada uno de los municipios tiene un link para acceder al historico de temperaturas.
 
@@ -51,7 +51,7 @@ Por ejemplo para el municipio de alcala de henares tenemos
 un grafico donde se muestra la evolucion de las temperaturas máximas y mínimas según el tiempo.
 
 
-![pagina_historico](documentacion\web_historico.png)
+![pagina_historico](documentacion/web_historico.png)
 
 
 
