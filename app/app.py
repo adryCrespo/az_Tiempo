@@ -1,20 +1,11 @@
 
 from flask import Flask,request,render_template,Response, jsonify
-# from flask_sqlalchemy import SQLAlchemy
-# from sqlalchemy import create_engine
-# from flask_migrate import Migrate
-# from config import Config
-# from http import HTTPStatus
-# from sqlalchemy import text
-import json
-# import psycopg2
 from Tiempo import Resumen_factory, Resumen_meteorologico
 import datetime
 from database_ops import DatabaseManager
 import matplotlib.pyplot as plt
 import io
 import base64
-import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from logica_css import get_css
@@ -37,9 +28,6 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 app = Flask(__name__,template_folder="template",static_folder="static",static_url_path="/")
-# connection_string = 'postgresql://root:root@flask-db:5432/root'
-# connection_string = 'postgresql://root:root@localhost:5432/root'
-# engine = create_engine(connection_string, echo=True)
 CIUDADES = ["madrid","alcala_heranes","getafe","collado_villalba","navalcarnero"]
 
      
@@ -51,20 +39,12 @@ def home():
     resumen = factory.crear_resumen()
     ciudades = CIUDADES
     logger.info("pagina inicial")
-    # insertar_datos_ciudades(resumen=resumen, ciudades=CIUDADES)
     return render_template("index.html",resumen=resumen,ciudades=ciudades, get_css =get_css)
 
 @app.template_filter('formato_nombre_ciudad')
 def formato_nombre_ciudad(s:str):
     temp = s.replace("_"," ")
     return ' '.join(word.capitalize() for word in temp.split())
-
-
-# def insertar_datos_ciudades( resumen:Resumen_meteorologico, ciudades:list = None ):
-#         insert_SQL_instance = InsertSQLManager()
-#         for ciudad in ciudades:
-#              t_min, t_max = resumen.get_dato_ciudad(nombre_ciudad=ciudad)
-#              insert_SQL_instance.insert_row_db(ciudad,t_min,t_max)
 
 
 @app.template_filter('b64encode')
@@ -77,7 +57,6 @@ def ciudad_url(ciudad):
         if ciudad not in CIUDADES:
             return render_template('404.html'), 404
         
-    # return f"ciudad {ciudad} no implementada"
         
 
         now = datetime.datetime.now()

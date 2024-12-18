@@ -1,5 +1,4 @@
 import requests
-import json
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
@@ -88,6 +87,3 @@ if __name__ == "__main__":
     factory = Resumen_factory()
     resumen = factory.crear_resumen()
     print(resumen.ciudades)
-    # print(resumen)
-    # c = Ciudad(nombre='navalcarnero', descripcion='Nuboso con lluvia', t_min='11', t_max='18')
-    # print(c.nombre)

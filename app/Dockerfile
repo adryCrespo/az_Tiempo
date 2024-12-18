@@ -4,7 +4,6 @@ WORKDIR /var/app/flask_app
 COPY requirements.txt /var/app/flask_app
 RUN apt-get update && apt-get -y install curl && apt-get -y install sudo
 RUN pip install --upgrade pip
-# RUN pip install curl
 RUN pip install --no-cache-dir -r requirements.txt 
 COPY . /var/app/flask_app 
 ENV FLASK_APP ../app.py 
